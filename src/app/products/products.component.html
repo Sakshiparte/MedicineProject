@@ -1,0 +1,50 @@
+<br>
+<br>
+<br>
+<div class="row ">
+     <div class="col-lg-4 ">
+      <h1>Filter Product</h1>
+    <div class="w-100 btn-group" role="group" aria-label="Basic radio toggle button group">
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio0" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio0" (click)="filterproducts('all')">All</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio2" (click)="filterproducts('skincare')">Skincare</label>
+   
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btnradio1" (click)="filterproducts('medicine')">Medicine</label>
+    </div>
+</div>
+
+ <div class="col-lg-4" style="margin-left:auto;">
+    <h1>Search Product</h1>
+    <div class="input-group mb-3">
+       <input class="form-control me-2" type="search" placeholder="search" [(ngModel)]="product_name"  name="product_name" aria-label="search">
+    </div>
+   </div>
+
+<div class="container mt-1">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let product of filter_products">
+        <div class="card m-5" style="max-width: 18rem;">
+          <img [src]="product.img" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Brand Name: {{product.name.brand_name}} {{product.name.model_name}}</h5>
+            <p class="card-text">Description: {{product.Description}} </p>
+            <p class="card-text">Type: {{product.Type}} </p>
+            <p class="card-text">Price: {{product.price|currency:"INR"}} </p>
+            <a class="btn btn-primary" [routerLink]="['/ordernow',product.id]">order now</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <a class="btn btn-primary" (click)="add_to_cart()">Add to cart</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  

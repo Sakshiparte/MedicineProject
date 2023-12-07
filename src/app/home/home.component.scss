@@ -1,0 +1,16 @@
+.image-container {
+  position: relative; /* set the container to be a positioned element */
+  height: 627px; /* set the height of the container */
+}
+
+.my-img-style {
+  position: absolute; /* set the image to be positioned absolutely */
+  top: 38%; /* set the top position to 50% */
+  left: 50%; /* set the left position to 50% */
+  transform: translate(-50%, -50%); /* center the image */
+  max-width: 100%; /* set the maximum width of the image */
+  height: auto; /* set the height of the image to be proportional */
+}
+
+
+
